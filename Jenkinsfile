@@ -8,7 +8,7 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                    sh 'virtualenv venv'
+                    sh 'python -m venv venv'
                     sh 'source venv/bin/activate && pip install flask'
                 }
             }
@@ -16,7 +16,7 @@ pipeline {
         stage('test') {
             steps {
                 script {
-                    sh 'virtualenv venv'
+                    sh 'python -m venv venv'
                     sh 'source venv/bin/activate && python test.py'
                 }
             }
