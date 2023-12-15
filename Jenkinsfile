@@ -8,16 +8,15 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                    sh 'python -m venv venv'
-                    sh '. venv\\Scripts\\activate && pip install flask'
+                    sh 'python3 -m venv env'
+                    sh 'source env/bin/activate && pip install flask'
                 }
             }
         }
         stage('test') {
             steps {
                 script {
-                    sh 'python -m venv venv'
-                    sh '. venv\\Scripts\\activate && python test.py'
+                    sh 'source env/bin/activate && python test.py'
                 }
             }
         }
