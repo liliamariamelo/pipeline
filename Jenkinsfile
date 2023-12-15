@@ -9,7 +9,7 @@ pipeline {
             steps {
                 script {
                     sh 'python -m venv venv'
-                    sh 'source venv/bin/activate && pip install flask'
+                    sh '. venv\\Scripts\\activate && pip install flask'
                 }
             }
         }
@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     sh 'python -m venv venv'
-                    sh 'source venv/bin/activate && python test.py'
+                    sh '. venv\\Scripts\\activate && python test.py'
                 }
             }
         }
